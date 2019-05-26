@@ -30,5 +30,16 @@
       statusEl.classList = ["is-offline"];
       statusEl.innerText = "Offline";
     }
+
+    // 监听
+    window.ononline = () => {
+      statusEl.classList.remove("is-offline");
+      statusEl.innerText = "Good";
+    };
+
+    window.onoffline = () => {
+      statusEl.classList.add("is-offline");
+      statusEl.innerText = "Offline";
+    };
   </script>
 </body>
