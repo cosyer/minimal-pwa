@@ -8,7 +8,7 @@
 
 <body>
   <div class="revision">Revision 8</div>
-  <img src="pwa-fonts.png" />
+  <img src="" id="bg" />
   <div class="main-text">
     Minimal PWA, open Console for more!
   </div>
@@ -16,10 +16,15 @@
     Network:
     <span id="network-status" class="">Good</span>
   </div>
+
   <script type="text/javascript">
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("sw.js").then(function(registration) {
-        console.log("Registered events at scope: ", registration.scope);
+        console.log("注册成功", registration.scope);
+        setTimeout(function() {
+          var bg = document.querySelector("#bg");
+          bg.src = "/pwa-fonts.png";
+        }, 5000);
       });
     }
 
